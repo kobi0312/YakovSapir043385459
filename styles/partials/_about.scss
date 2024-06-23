@@ -1,0 +1,68 @@
+.about {
+    @include container;
+    background: $white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px 130px / 150px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+
+    img {
+        height: auto;
+        border-radius: 0% 50% 0%;
+        margin-bottom: 20px;
+        height: 200px;
+        box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 1.0);
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        background: $button-bg;
+        color: $button-color;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px 100px / 120px;
+        box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 1.0);
+
+        &:hover {
+            background: darken($button-bg, 10%);
+
+        }
+    }
+
+    @media (max-width: 768px) {
+        img {
+            max-width: auto;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        button {
+            font-size: 0.9em;
+            padding: 8px 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        img {
+            max-width: auto;
+        }
+
+        p {
+            font-size: 0.9em;
+        }
+
+        button {
+            font-size: 0.8em;
+            padding: 6px 12px;
+
+        }
+    }
+}

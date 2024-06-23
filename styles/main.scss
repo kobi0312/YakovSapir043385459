@@ -1,0 +1,21 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+@import 'partials/_navbar';
+@import 'partials/_header';
+@import 'partials/_hero';
+@import 'partials/_logos';
+@import 'partials/_about';
+@import 'partials/_projects';
+@import 'partials/_contact';
+@import 'partials/_footer';
+
+
+// Global Styles
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}

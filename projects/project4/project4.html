@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #FFFFFF;
+            opacity: 1;
+            font-family: 'Assistant', sans-serif;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-image {
+            background: transparent url('../project4/images/Path4.png') 0% 0% no-repeat padding-box;
+            width: 100%;
+            height: 743px;
+            position: relative;
+        }
+
+        .title {
+            position: absolute;
+            top: 282px;
+            width: 100%;
+            text-align: center;
+            font: normal normal bold 86px/113px Assistant;
+            color: #D3E10E;
+        }
+
+        .subtitle {
+            position: absolute;
+            top: 418px;
+            width: 100%;
+            text-align: center;
+            font: normal normal normal 20px/26px Assistant;
+            color: #F9F9F9;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 20px;
+            background: #F6F6F6;
+            padding: 10px;
+        }
+
+        .form-control {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .btn-submit {
+            background: #D3E10E;
+            font: normal normal bold 22px/30px Assistant;
+            color: #011560;
+            border: none;
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 992px) {
+            .title {
+                font-size: 48px;
+                top: 200px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+                top: 300px;
+            }
+
+            .form-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-control,
+            .btn-submit {
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .title {
+                font-size: 36px;
+                top: 150px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                top: 250px;
+            }
+
+            .form-container {
+                padding: 5px;
+            }
+
+            .form-control,
+            .btn-submit {
+                padding: 5px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body dir="rtl">
+    <div class="header-image">
+        <div class="title">תן לנו להוביל אותך קדימה</div>
+        <div class="subtitle">Lorem ipsum dolor sit amet,consectetur adipiscing elitconsectetur adipiscing
+            elitconsectetur adipiscing elit.</div>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <input type="text" class="form-control" placeholder="שם מלא">
+            <input type="email" class="form-control" placeholder="דוא״ל">
+            <button class="btn-submit">שליחה</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
