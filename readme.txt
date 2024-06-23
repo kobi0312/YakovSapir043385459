@@ -1,5 +1,5 @@
-Portfolio Project
-Overview
+My Portfolio Project Overview
+Yakov Sapir 043385459
 This is my personal portfolio project showcasing my skills and projects. The portfolio includes a gallery with 6 sample landing pages that I created using HTML, CSS, SASS, and Bootstrap.
 
 Technologies Used
@@ -7,26 +7,28 @@ HTML: For the structure and content of the web pages.
 CSS: For styling and layout.
 SASS: For more efficient and modular CSS.
 Bootstrap: For responsive design and pre-built components.
-Features
-Responsive Design: Ensures that the portfolio looks good on all devices, from mobile phones to desktops.
+Features Responsive Design: Ensures that the portfolio looks good on all devices, from mobile phones to desktops.
 Modern UI: Clean and professional design using modern web development practices.
 Gallery: A collection of 6 unique landing pages, each demonstrating different design styles and functionalities.
 Gallery
 The gallery contains the following landing pages:
 
-Landing Page 1: Description of what makes this page unique.
-Landing Page 2: Description of what makes this page unique.
-Landing Page 3: Description of what makes this page unique.
-Landing Page 4: Description of what makes this page unique.
-Landing Page 5: Description of what makes this page unique.
-Landing Page 6: Description of what makes this page unique.
+project 1: Register Form
+project 2: Contact Us Form
+project 3: Register Form
+project 4: Register Form
+project 5: Contact Us Form
+project 6: Register Form
+
+
+
+
+
 Installation
 To view the project locally:
-
 Clone the repository:
-bash
-Copy code
-git clone https://github.com/yourusername/portfolio-project.git
+Bash Copy code
+git clone  https://kobi0312.github.io/YakovSapir043385459/
 Navigate to the project directory:
 bash
 Copy code
