@@ -28,7 +28,7 @@ Installation
 To view the project locally:
 Clone the repository:
 Bash Copy code
-git clone https://github.com/kobi0312/YakovSapir043385459/tree/main
+git clone  https://kobi0312.github.io/YakovSapir043385459/
 Navigate to the project directory:
 bash
 Copy code
