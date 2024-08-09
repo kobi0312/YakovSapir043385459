@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יומן פעילות יומי</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    </style>
+</head>
+
+<body class="theme-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center my-4">
+            <h1>יומן פעילות יומי</h1>
+            <div>
+                <select id="themeSelector" class="form-control">
+                    <option value="light">עיצוב בהיר</option>
+                    <option value="dark">עיצוב כהה</option>
+                </select>
+            </div>
+            <div id="weatherDetails" class="text-right">
+                <img id="weatherIcon" alt="אייקון מזג אוויר">
+                <!-- המידע על מזג האוויר יופיע כאן -->
+            </div>
+        </div>
+
+        <div class="my-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="חפש פעילות...">
+            <select id="sortBy" class="form-control mt-2">
+                <option value="name">מיין לפי שם</option>
+                <option value="dateTime">מיין לפי זמן</option>
+            </select>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>שם הפעילות</th>
+                    <th>קטגוריה</th>
+                    <th>תיאור</th>
+                    <th>תאריך ושעה</th>
+                    <th>פעולות</th>
+                </tr>
+            </thead>
+            <tbody id="activityTableBody">
+                <!-- השורות של הפעילויות יתווספו כאן דינמית -->
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" data-toggle="modal" data-target="#addActivityModal">הוסף פעילות</button>
+    </div>
+
+    <!-- מודאל הוספת פעילות -->
+    <div class="modal fade" id="addActivityModal" tabindex="-1" role="dialog" aria-labelledby="addActivityModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addActivityModalLabel">הוסף פעילות חדשה</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="addActivityForm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="activityName">שם הפעילות</label>
+                            <input type="text" class="form-control" id="activityName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="activityCategory">קטגוריה</label>
+                            <input type="text" class="form-control" id="activityCategory">
+                        </div>
+                        <div class="form-group">
+                            <label for="activityDescription">תיאור</label>
+                            <textarea class="form-control" id="activityDescription"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="activityDateTime">תאריך ושעה</label>
+                            <input type="datetime-local" class="form-control" id="activityDateTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="activityNotification">התראה 10 דקות לפני</label>
+                            <input type="checkbox" id="activityNotification">
+                        </div>
+                        <div class="form-group">
+                            <label for="activityRepeat">חזרה</label>
+                            <select class="form-control" id="activityRepeat">
+                                <option value="none">ללא</option>
+                                <option value="daily">יומי</option>
+                                <option value="weekly">שבועי</option>
+                                <option value="monthly">חודשי</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">שמור</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- מודאל עריכת פעילות -->
+    <div class="modal fade" id="editActivityModal" tabindex="-1" role="dialog" aria-labelledby="editActivityModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editActivityModalLabel">ערוך פעילות</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="editActivityForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="editActivityId">
+                        <div class="form-group">
+                            <label for="editActivityName">שם הפעילות</label>
+                            <input type="text" class="form-control" id="editActivityName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editActivityCategory">קטגוריה</label>
+                            <input type="text" class="form-control" id="editActivityCategory">
+                        </div>
+                        <div class="form-group">
+                            <label for="editActivityDescription">תיאור</label>
+                            <textarea class="form-control" id="editActivityDescription"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="editActivityDateTime">תאריך ושעה</label>
+                            <input type="datetime-local" class="form-control" id="editActivityDateTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editActivityNotification">התראה 10 דקות לפני</label>
+                            <input type="checkbox" id="editActivityNotification">
+                        </div>
+                        <div class="form-group">
+                            <label for="editActivityRepeat">חזרה</label>
+                            <select class="form-control" id="editActivityRepeat">
+                                <option value="none">ללא</option>
+                                <option value="daily">יומי</option>
+                                <option value="weekly">שבועי</option>
+                                <option value="monthly">חודשי</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">שמור</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

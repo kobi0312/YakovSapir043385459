@@ -1,0 +1,43 @@
+.logos {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 100px;
+    padding-bottom: 60px;
+    /*background-color: $gray-light;*/
+
+    .logo-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+
+        img {
+            max-width: 120px;
+
+        }
+    }
+
+    .left-arrow,
+    .right-arrow {
+        max-width: 120px;
+    }
+
+    @media (max-width: 768px) {
+
+        .left-arrow,
+        .right-arrow {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        .left-arrow,
+        .right-arrow {
+            display: none;
+        }
+    }
+}

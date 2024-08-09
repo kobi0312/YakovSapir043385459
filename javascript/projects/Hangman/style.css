@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('../Hangman/images/hangman.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#game-title {
+    font-size: 48px;
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+.mode-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 2px solid #000;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.mode-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+#game-container {
+    margin-top: 20px;
+}
+
+#word-display {
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+
+#wrong-letters {
+    color: red;
+    margin-top: 10px;
+}
+
+#input-container {
+    margin-top: 20px;
+}
+
+#hangman-canvas {
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+#end-message {
+    font-size: 32px;
+    font-weight: bold;
+    color: red;
+    animation: grow 1s forwards;
+    margin-top: 20px;
+}

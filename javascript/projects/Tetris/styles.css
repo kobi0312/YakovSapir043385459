@@ -1,0 +1,67 @@
+body {
+    background: url('../Tetris/images/backgound.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+
+h1.floating-title {
+    padding-top: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.game-container {
+    height: 600px;
+    width: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+.score {
+    font-size: 2rem;
+}
+
+canvas {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#tetris {
+    margin: 0 auto;
+    display: block;
+}
+
+#gameOver {
+    font-size: 1rem;
+    opacity: 0;
+    color: rgb(2, 14, 252);
+    animation: growShrink 3s ease-in-out infinite;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+@keyframes growShrink {
+
+    0%,
+    100% {
+        font-size: 1rem;
+        opacity: 0;
+    }
+
+    50% {
+        font-size: 3rem;
+        opacity: 1;
+    }
+}

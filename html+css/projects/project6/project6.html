@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Project</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .left-image {
+            width: 100%;
+            height: 910px;
+            flex-shrink: 0;
+            opacity: 0.9;
+            background: linear-gradient(180deg, rgba(98, 98, 98, 0.79) 0%, rgba(0, 0, 0, 0.00) 0.01%, rgba(0, 0, 0, 0.30) 96.87%), url('../project6/images/vegan.jpg') lightgray 50% / cover no-repeat;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .social-button {
+            width: 384px;
+            height: 34px;
+            flex-shrink: 0;
+            border-radius: 15px;
+            border: 1px solid #CCC;
+            background: #FFFDFD;
+            box-shadow: 2px 4px 6px 0px rgba(79, 79, 79, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .social-button:hover {
+            background: #f0f0f0;
+            box-shadow: 2px 4px 8px 0px rgba(79, 79, 79, 0.3);
+        }
+
+        .social-button img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .form-container {
+            margin-top: 200px;
+            text-align: right;
+        }
+
+        .form-title {
+            color: #4F4F4F;
+            font-family: 'Heebo-Bold', sans-serif;
+            font-size: 45px;
+            font-weight: 400;
+            letter-spacing: 6.75px;
+        }
+
+        .form-subtitle {
+            color: rgba(79, 79, 79, 0.80);
+            font-family: 'Heebo-Medium', sans-serif;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .form-group input {
+            width: 385px;
+            height: 30px;
+            border-radius: 2px;
+            border: 1px solid #CACACA;
+            background: #FFF;
+            box-shadow: 2px 4px 6px 0px rgba(96, 105, 230, 0.15);
+        }
+
+        .form-text {
+            color: #4F4F4F;
+            font-family: 'Heebo-Regular', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            text-align: right;
+
+        }
+
+        .form-text input {
+            width: 15px;
+            height: 15px;
+            margin-right: 20px;
+        }
+
+        .submit-button {
+            width: 384px;
+            height: 34px;
+            flex-shrink: 0;
+            border-radius: 15px;
+            border: 1px solid #CCC;
+            background: #03A9F4;
+            box-shadow: 2px 4px 6px 0px rgba(79, 79, 79, 0.15);
+            color: #FFF;
+            font-family: 'Heebo-Medium', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #0288d1;
+            box-shadow: 2px 4px 8px 0px rgba(79, 79, 79, 0.3);
+        }
+
+
+        .right-image1 img {
+            position: fixed;
+            bottom: 0px;
+            left: 960px;
+            width: 10%;
+        }
+
+        .right-image2 img {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            transform: rotate(180deg);
+            width: 10%;
+
+        }
+
+        @media (max-width: 768px) {
+
+            .left-image,
+            .right-image1 img {
+                width: 100%;
+                height: auto;
+            }
+
+            .form-group input,
+            .social-button,
+            .submit-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 p-0">
+                <div class="left-image d-flex flex-column justify-content-center align-items-center">
+                    <button class="social-button">
+                        <img src="../project6/images/Linkedin.png" alt="LinkedIn">
+                        הרשמה באמצעות לינקדאין
+                    </button>
+                    <button class="social-button">
+                        <img src="../project6/images/twitter.png" alt="Twitter">
+                        הרשמה באמצעות טוויטר
+                    </button>
+                    <button class="social-button">
+                        <img src="../project6/images/Facebook.png" alt="Facebook">
+                        הרשמה באמצעות פייסבוק
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex flex-column align-items-center">
+                <div dir="rtl" class="form-container">
+                    <div class="form-title">הרשמה</div>
+                    <div class="form-subtitle">הרשם עוד היום בחינם</div>
+                    <form>
+                        <div class="form-group mt-4">
+                            <label for="email" class="form-label">דוא"ל</label>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="הכנס את הדואר האלקטרוני שלך">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="fullname" class="form-label">שם מלא</label>
+                            <input type="text" class="form-control" id="fullname" placeholder="הכנס את שמך המלא">
+                        </div>
+                        <div dir="ltr" class="form-text mt-3">
+                            <input type="checkbox" id="terms">
+                            יצירת חשבון פירושה שאתה מאשר את התנאים וההגבלות
+                            מדיניות הפרטיות <br>והגדרות ברירת המחדל של
+                            התראות.
+                        </div>
+                        <button type="submit" class="submit-button mt-4">הרשמה</button>
+                    </form>
+                </div>
+                <div class="right-image1">
+                    <img src="../project6/images/Group 20.png" alt="Group 20">
+                </div>
+                <div class="right-image2">
+                    <img src="../project6/images/Group 20.png" alt="Group 20">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

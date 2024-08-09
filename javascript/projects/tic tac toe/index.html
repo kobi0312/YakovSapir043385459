@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../tic tac toe/css/styles.css">
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div id="welcome-screen" class="text-center">
+            <h1 class="floating">Welcome To Kobi's <br>Tic-Tac-Toe game</h1>
+            <div class="form-group">
+                <label for="player-mode" style="color: white;">Select Mode:</label>
+                <select id="player-mode" class="form-control">
+                    <option value="1">1 Player (vs Computer)</option>
+                    <option value="2">2 Players</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="game-difficulty" style="color: white;">Select Difficulty:</label>
+                <select id="game-difficulty" class="form-control">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="start-game" class="btn btn-primary rounded-pill mt-3">Start Game</button>
+        </div>
+        <div id="game-screen" class="d-none">
+            <div class="text-center">
+                <h1 class="floating">Tic Tac Toe</h1>
+                <div id="leaderboard" class="text-center">
+                    <h3 style="color: white;">Leaderboard</h3>
+                    <ul id="leaderboard-list" class="list-group">
+                    </ul>
+                </div>
+
+                <div id="game-result" class="mb-3" style="color: rgb(12, 3, 170);"></div>
+            </div>
+            <div class="board floating" id="board"></div>
+            <div class="text-center mt-3">
+                <button id="reset-game" class="btn btn-secondary">Reset Game</button>
+                <button id="exit-game" class="btn btn-danger">Exit</button>
+                <button id="clear-scores" class="btn btn-secondary">Clear Scores</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../tic tac toe/js/script.js"></script>
+</body>
+
+</html>

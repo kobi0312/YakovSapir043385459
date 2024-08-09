@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #FFFFFF;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .top-image {
+            background: transparent url('img/Path 15.png') 0% 0% no-repeat padding-box;
+            width: 100%;
+            height: 590px;
+            position: relative;
+        }
+
+        .rectangle {
+            background: #1A1A1AD4;
+            opacity: 1;
+            width: 569px;
+            height: 643px;
+            position: absolute;
+            top: 157px;
+            left: 1056px;
+            padding: 20px;
+        }
+
+        .rectangle .title {
+            text-align: right;
+            font: normal normal 900 36px/53px Heebo;
+            color: #FFFFFF;
+            opacity: 1;
+            width: 600px;
+            height: 70px;
+        }
+
+        .rectangle .description {
+            text-align: right;
+            color: #FFFFFF;
+            opacity: 1;
+            margin: 80px 0;
+        }
+
+        .rectangle .form-group {
+            margin-bottom: 20px;
+        }
+
+        .rectangle .form-control {
+            background: #FFFFFF;
+            border: 1px solid #D31C75;
+            opacity: 1;
+        }
+
+        .rectangle .btn {
+            background: #D31C75;
+            color: #FFFFFF;
+            width: 100%;
+            max-width: 166px;
+            height: 50px;
+            opacity: 1;
+            width: 100%;
+            max-width: 200px;
+            margin-left: 500px;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .top-image {
+                height: auto;
+            }
+
+            .rectangle {
+                width: 80%;
+                height: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 20px;
+                top: 50px;
+            }
+
+            .rectangle .title {
+                font-size: 28px;
+                line-height: 40px;
+                width: auto;
+            }
+
+            .rectangle .btn {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rectangle {
+                width: 80%;
+                padding: 10px;
+            }
+
+            .rectangle .title {
+                font-size: 24px;
+                line-height: 35px;
+            }
+
+            .rectangle .description {
+                font-size: 14px;
+                margin: 10px 0;
+            }
+
+            .rectangle .btn {
+                width: 100%;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-image">
+        <img src="../project2/images/Path15.png" alt="Top Image" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="rectangle" dir="rtl">
+        <div class="title">תן לנו להוביל אותך קדימה</div>
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan
+            tortor.</div>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="שם מלא">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="דוא״ל">
+            </div>
+            <button type="submit" class="btn">שליחה</button>
+        </form>
+    </div>
+</body>
+
+</html>

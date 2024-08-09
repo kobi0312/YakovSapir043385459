@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+    background: url('../Task-management/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.modal-header .close {
+    margin-left: auto;
+}
+
+body.theme-light {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+body.theme-dark {
+    background-color: #343a40;
+    color: #000000;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.completed::before {
+    content: "✔️ ";
+    color: green;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.dropzone {
+    border: 2px dashed #007bff;
+}
+
+#weatherIcon {
+    display: none;
+}
+
+#weatherDetails {
+    font-size: 0.9em;
+    text-align: right;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-header .close {
+    color: white;
+}
+
+.modal-footer {
+    background-color: #f1f1f1;
+}
+
+
+#weather {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    text-align: center;
+}
+
+.close {
+    top: 10px;
+    left: 10px;
+    justify-content: left;
+
+}
+
+.table {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(226, 137, 21, 0.377);
+}
+
+/* ערכת נושא כהה */
+.theme-dark {
+    background-color: #343a4080;
+    color: #000000;
+}
+
+.theme-dark .table {
+    background-color: #49505757;
+    color: #000000;
+}
+
+.theme-dark .table th,
+.theme-dark .table td {
+    border-color: #6c757d;
+}
+
+/* ערכת נושא בהירה */
+.theme-light {
+    background-color: #7070706e;
+    color: #343a40;
+}
+
+.theme-light .table {
+    background-color: #ffffff;
+    color: #343a40;
+}
+
+.theme-light .table th,
+.theme-light .table td {
+    border-color: #969797;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.completed::before {
+    content: "✔️ ";
+    color: green;
+}

@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('../puzzle/images/jigsaw_puzzle_frame_3_b_blk.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    height: 800px;
+}
+
+#controls {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#gameBoard {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+.tile {
+    border: 1px solid #ccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+}
+
+.empty {
+    background: none;
+    border: none;
+}
+
+.grow-shrink {
+    animation: grow-shrink 0.5s infinite alternate;
+}
+
+@keyframes grow-shrink {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+#message {
+    font-size: 24px;
+    color: green;
+    font-weight: bold;
+}

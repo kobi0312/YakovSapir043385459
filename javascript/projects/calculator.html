@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: url('../projects/images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*nav bar section*/
+        .navbar {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: url("../projects/images/menuback1.png") no-repeat center center/cover;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            max-width: 130px;
+            box-shadow: 3px 3px 5px black solid #000;
+        }
+
+        .navbar .avatar {
+            max-width: 120px;
+            bottom: 0;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 80px;
+            font-size: 1.2rem;
+        }
+
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links li a:hover {
+            color: #666;
+        }
+
+        .navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .hamburger span {
+            height: 5px;
+            width: 80px;
+            background: #333;
+            margin: 3px;
+            padding: 3px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .hamburger.toggle span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .navbar .hamburger.toggle span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar .hamburger.toggle span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                position: absolute;
+                right: 0;
+                height: 80vh;
+                top: 0;
+                background: url("../projects/images/menuback.png") no-repeat center center/cover;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 90%;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in;
+                gap: 10px;
+            }
+
+            .navbar .nav-links.nav-active {
+                transform: translateX(0%);
+            }
+
+            .navbar .hamburger {
+                display: flex;
+            }
+
+            .navbar .avatar {
+                display: none;
+            }
+        }
+
+        /*header section*/
+        .project-header {
+            /*background-color: #4CAF50;
+            color: white;*/
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-top: 200px;
+
+        }
+
+
+        .project-name {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .project-description {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            justify-content: center;
+
+        }
+
+        .button1 {
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px 100px/120px;
+            box-shadow: 0px 0px 5px black;
+
+        }
+
+        .button2 {
+
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px 100px/120px;
+            box-shadow: 0px 0px 5px black;
+
+        }
+
+        .buttons button:hover,
+        .buttons a:hover {
+            background: #0062cc;
+            color: white;
+        }
+
+
+        .logos {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 70px;
+            padding-bottom: 60px;
+            /*background-color: $gray-light;*/
+        }
+
+        .logos .logo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logos .logo-container img {
+            max-width: 120px;
+        }
+
+        .logos .left-arrow,
+        .logos .right-arrow {
+            max-width: 120px;
+        }
+
+        @media (max-width: 768px) {
+
+            .logos .left-arrow,
+            .logos .right-arrow {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .logos .left-arrow,
+            .logos .right-arrow {
+                display: none;
+            }
+        }
+
+
+
+        footer {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+            background: none;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 300px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+        }
+
+        footer .social-media a {
+            display: grid;
+        }
+
+        footer .social-media a img {
+            height: auto;
+            border-radius: 90px;
+            height: 5vw;
+            box-shadow: 0px 0px 10px black;
+        }
+
+        footer p {
+            color: rgba(0, 0, 0, .7);
+            text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+
+
+        @media (max-width: 768px) {
+            footer .social-media {
+                gap: 40px;
+            }
+
+            footer .social-media a img {
+                width: 30px;
+                height: 30px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer .social-media {
+                gap: 60px;
+            }
+
+            footer .social-media a img {
+                width: 40px;
+                height: 40px;
+            }
+
+            footer p {
+                font-size: 10px;
+            }
+        }
+
+
+        /* Adjust padding for tablets */
+        @media (max-width: 768px) {
+            .image-container {
+                padding-bottom: 50px;
+                padding-top: 75px;
+            }
+        }
+
+        /* Adjust padding for mobile phones */
+        @media (max-width: 480px) {
+            .image-container {
+                padding-bottom: 25px;
+                padding-top: 50px;
+            }
+        }
+
+        /* Make the image responsive */
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn-up {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 0% 50% 0%;
+        }
+
+        .btn-up:hover {
+            background: #0062cc;
+        }
+
+        .image-container {
+            text-align: center;
+            padding-bottom: 100px;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../javascript portfolio.html">
+            <img src="../projects/images/logo.png" alt="Logo" class="logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="../javascript portfolio.html">Back</a></li>
+        </ul>
+        <img src="../projects/images/avatar.png" alt="Avatar" class="avatar">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <header class="project-header">
+        <div class="container">
+            <h1 class="project-name">Iphone Calculator</h1>
+            <p class="project-description">This is an amazing project that showcases my full-stack development skills.
+            </p>
+            <div class="buttons">
+                <a href="../projects/calculator/index.html" id="button1" class="btn btn-primary">View Project</a>
+                <a href="../projects/calculator/calculator.zip" id="button2" class="btn btn-primary">Download
+                    Project</a>
+
+            </div>
+        </div>
+    </header>
+    </div>
+    <section class="logos">
+        <img src="../projects/images/left.png" alt="Left Arrow" class="left-arrow">
+        <div class="logo-container">
+            <img src="../projects/images//img-JS.png" alt="JavaScript">
+            <img src="../projects/images/img-SASS.png" alt="SASS">
+            <img src="../projects/images/img-CSS.png" alt="CSS">
+            <img src="../projects/images/img-Bootstrap.png" alt="Bootstrap">
+            <img src="../projects/images/img-HTML.png" alt="HTML">
+            <img src="../projects/images/img-API.png" alt="Photoshop">
+            <img src="../projects/images/img-ES6.png" alt="Illustrator">
+            <img src="../projects/images/img-NodeJS.png" alt="Figma">
+        </div>
+        <img src="../projects/images/right.png" alt="Right Arrow" class="right-arrow">
+    </section>
+    <main class="main-content">
+        <div class="image-container">
+            <img src="../projects/calculator/images/calc.png" alt="Project Image" class="responsive-image">
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://wa.me/972506075597"><img src="../projects/images/whata.png" alt="WhatsApp"></a>
+            <a href="https://kobisapir0312@gmail.com"><img src="../projects/images/mail.png" alt="email"></a>
+            <a href="https://www.linkedin.com/in/yakov-sapir/"><img src="../projects/images/linki.png"
+                    alt="LinkedIn"></a>
+            <a href="https://www.facebook.com/profile.php?id=100083184259332"><img src="../projects/images/faceb.png"
+                    alt="Facebook"></a>
+        </div>
+
+
+        <p>&copy; 2024 My Portfolio. All rights reserved To KS DIGITAL.</p>
+    </footer>
+
+
+    <script>
+
+
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+            document.querySelector('.hamburger').classList.toggle('toggle');
+        });
+
+
+    </script>
+
+</body>
+
+</html>
