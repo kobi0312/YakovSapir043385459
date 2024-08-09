@@ -1,21 +1,21 @@
 .navbar {
-  width: 90%;
+  width: 100%;
+  /* Ensure the navbar spans the full width */
   margin: 0 auto;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*background: rgba(255, 255, 255, 0.799);*/
   background: url("../images/menuback1.png") no-repeat center center/cover;
   position: fixed;
-  width: 100%;
-  top: 0px;
+  top: 0;
   z-index: 1000;
 }
 
 .navbar .logo {
   max-width: 130px;
-  box-shadow: 3px 3px 5px black solid #000;
+  box-shadow: 3px 3px 5px #000;
+  /* Removed 'solid' as it's not needed */
 }
 
 .navbar .avatar {
@@ -26,7 +26,8 @@
 .navbar .nav-links {
   display: flex;
   list-style: none;
-  gap: 80px;
+  gap: 40px;
+  /* Reduced gap for better spacing */
   font-size: 1.2rem;
 }
 
@@ -48,7 +49,8 @@
 
 .navbar .hamburger span {
   height: 5px;
-  width: 80px;
+  width: 40px;
+  /* Reduced width for better mobile responsiveness */
   background: #333;
   margin: 3px;
   padding: 3px;
@@ -70,29 +72,29 @@
 
 @media (max-width: 768px) {
   .navbar {
-    position: relative;
-    /* Ensure relative positioning */
+    position: fixed;
+    /* Keep the navbar fixed on mobile */
   }
 
   .navbar .nav-links {
     position: absolute;
-    top: 0;
+    top: 60px;
+    /* Ensures it sits below the navbar */
     right: 0;
     height: 80vh;
     width: 100%;
-    /* Adjusted for full width */
     background: url("../images/menuback.png") no-repeat center center/cover;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: 10px;
+    gap: 20px;
+    /* Adjusted for better spacing */
     transform: translateX(100%);
     transition: transform 0.3s ease-in;
   }
 
   .navbar .nav-links.nav-active {
     transform: translateX(0%);
-    /* Slide-in from the right */
   }
 
   .navbar .hamburger {
@@ -102,7 +104,6 @@
   .navbar .avatar {
     display: none;
   }
-
 }
 
 .header {
