@@ -107,12 +107,12 @@
 }
 
 .header {
-  width: 90%;
+  width: 100%;
+  /* Set to 100% for full-width */
   margin: 0 auto;
-  padding: 20px 0;
-  /*background: $gray;*/
-  text-align: center;
   padding: 200px 10px 10px;
+  /* Keep the necessary padding only */
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -134,7 +134,13 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 80px 10px 40px;
+    padding: 100px 20px 40px;
+    /* Adjust padding for mid-sized screens */
+  }
+
+  .header img {
+    max-width: 40%;
+    /* Adjust image size for better fit */
   }
 
   .header h1 {
@@ -148,7 +154,13 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 90px 60px 30px;
+    padding: 80px 10px 30px;
+    /* Adjusted padding for smaller screens */
+  }
+
+  .header img {
+    max-width: 60%;
+    /* Further reduce image size for smaller screens */
   }
 
   .header h1 {
