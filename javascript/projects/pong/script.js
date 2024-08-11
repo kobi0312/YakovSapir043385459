@@ -117,8 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function resetBall() {
         ballX = (gameWidth - ballSize) / 2;
         ballY = (gameHeight - ballSize) / 2;
-        ballSpeedX = Math.abs(ballSpeedX) * (ballSpeedX < 0 ? -1 : 1); // Ensure ball goes towards the player after reset
-        ballSpeedY = Math.abs(ballSpeedY);
+        ballSpeedX = Math.abs(ballSpeedX) * (ballSpeedX < 0 ? -1 : 1);
     }
 
     function updateScore() {
@@ -129,5 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
     levelSelect.addEventListener('change', setDifficulty);
     bgColorSelect.addEventListener('change', changeBackgroundColor);
 
-    setDifficulty(); // Set initial difficulty based on default selection
+    setDifficulty();
 });

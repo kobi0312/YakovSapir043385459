@@ -44,10 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const handleOperator = (nextOperator) => {
-        if (operator && !shouldResetScreen) {
+        if (previousValue !== null && operator && !shouldResetScreen) {
             calculate();
+        } else {
+            previousValue = currentValue;
         }
-        previousValue = currentValue;
         operator = nextOperator;
         shouldResetScreen = true;
     };
@@ -76,15 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
             case "invert":
                 currentValue = (current * -1).toString();
                 break;
-            case "=":
-                calculate();
-                break;
             default:
                 break;
         }
 
         operator = null;
-        previousValue = null;
+        previousValue = currentValue;
         shouldResetScreen = true;
     };
 
