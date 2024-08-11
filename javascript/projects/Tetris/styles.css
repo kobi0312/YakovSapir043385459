@@ -1,14 +1,20 @@
 body {
-    background: url('../Tetris/images/backgound.jpg') no-repeat center center fixed;
+    background: url('../Tetris/images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Floating title */
 h1.floating-title {
     padding-top: 20px;
     animation: float 3s ease-in-out infinite;
+    text-align: center;
+    font-size: 2rem;
 }
 
+/* Floating animation */
 @keyframes float {
 
     0%,
@@ -21,28 +27,46 @@ h1.floating-title {
     }
 }
 
+/* Game container */
 .game-container {
-    height: 600px;
-    width: 480px;
+    height: 60vh;
+    /* Adjusted for responsive height */
+    width: 80vw;
+    /* Adjusted for responsive width */
+    max-width: 480px;
+    /* Maintain max-width for larger screens */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2px;
+    margin: 0 auto;
+    /* Center the container */
 }
 
+/* Score */
 .score {
     font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+/* Canvas */
 canvas {
     background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    /* Make canvas responsive */
+    height: auto;
+    /* Maintain aspect ratio */
 }
 
+/* Tetris canvas */
 #tetris {
     margin: 0 auto;
     display: block;
+    max-width: 100%;
 }
 
+/* Game over message */
 #gameOver {
     font-size: 1rem;
     opacity: 0;
@@ -50,8 +74,10 @@ canvas {
     animation: growShrink 3s ease-in-out infinite;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
+    text-align: center;
 }
 
+/* Grow and shrink animation */
 @keyframes growShrink {
 
     0%,
@@ -63,5 +89,25 @@ canvas {
     50% {
         font-size: 3rem;
         opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1.floating-title {
+        font-size: 1.5rem;
+    }
+
+    .game-container {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .score {
+        font-size: 1.5rem;
+    }
+
+    #gameOver {
+        font-size: 0.8rem;
     }
 }
