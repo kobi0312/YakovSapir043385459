@@ -1,11 +1,11 @@
-/*nav bar section*/
 .navbar {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /*background: rgba(255, 255, 255, 0.799);*/
   background: url("../images/menuback1.png") no-repeat center center/cover;
   position: fixed;
   width: 100%;
@@ -14,7 +14,8 @@
 }
 
 .navbar .logo {
-  max-width: 120px;
+  max-width: 130px;
+  box-shadow: 3px 3px 5px black solid #000;
 }
 
 .navbar .avatar {
@@ -97,12 +98,12 @@
 }
 
 .header {
-  width: 100%;
-  /* Set to 100% for full-width */
+  width: 90%;
   margin: 0 auto;
-  padding: 200px 10px 10px;
-  /* Keep the necessary padding only */
+  padding: 20px 0;
+  /*background: $gray;*/
   text-align: center;
+  padding: 200px 10px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -124,13 +125,7 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 100px 20px 40px;
-    /* Adjust padding for mid-sized screens */
-  }
-
-  .header img {
-    max-width: 40%;
-    /* Adjust image size for better fit */
+    padding: 80px 10px 40px;
   }
 
   .header h1 {
@@ -144,13 +139,7 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 80px 10px 30px;
-    /* Adjusted padding for smaller screens */
-  }
-
-  .header img {
-    max-width: 60%;
-    /* Further reduce image size for smaller screens */
+    padding: 90px 60px 30px;
   }
 
   .header h1 {
@@ -213,7 +202,7 @@
 }
 
 .about {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 20px 0;
   background: #fff;
@@ -225,9 +214,9 @@
 
 .about img {
   height: auto;
-  width: 180px;
   border-radius: 0% 50% 0%;
   margin-bottom: 20px;
+  height: 200px;
   box-shadow: 0px 0px 5px black;
 }
 
@@ -267,10 +256,6 @@
 }
 
 @media (max-width: 480px) {
-  .about {
-    width: 50%;
-  }
-
   .about img {
     max-width: auto;
   }
@@ -293,22 +278,21 @@
   font-size: 1.8em;
 }
 
-lottie-player {
-  --lottie-player-seeker-track-color: #e4850900;
-  --lottie-player-seeker-thumb-color: #ffcc0000;
-}
-
 .projects {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  /*background: $gray;*/
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   display: grid;
-  gap: 40px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
 }
 
 .projects .project {
+  /*background: $white;*/
   margin-bottom: 50px;
   padding: 20px 20px;
   border-radius: 10px;
@@ -368,31 +352,7 @@ lottie-player {
   }
 }
 
-.projects .projects {
-  width: 90%;
-  margin: 0 auto;
-  padding: 20px 0;
-  max-width: 100%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  gap: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media (max-width: 480px) {
-  .projects {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 0;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .project {
     padding: 10px;
   }
