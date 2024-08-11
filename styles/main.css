@@ -215,7 +215,7 @@
 }
 
 .about {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   padding: 20px 0;
   background: #fff;
@@ -234,7 +234,7 @@
 }
 
 .about p {
-  font-size: 0.9em;
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
