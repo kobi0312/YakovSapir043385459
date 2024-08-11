@@ -4,7 +4,8 @@ let wrongLetters = [];
 let remainingGuesses = 6;
 let isSinglePlayer = true;
 
-const words = ["javascript", "developer", "hangman", "programming", "interface"];
+const words = ["astronaut", "dolphin", "volcano", "pyramid", "giraffe", "chocolate", "sapphire", "kaleidoscope", "elephant", "hurricane", "waterfall", "mystery", "butterfly", "galaxy", "whisper", "jungle", "bicycle", "enchanted", "treasure", "rainbow"];
+
 
 const wordDisplay = document.getElementById('word-display');
 const wrongLettersDisplay = document.getElementById('wrong-letters');
