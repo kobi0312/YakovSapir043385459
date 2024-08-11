@@ -278,21 +278,22 @@
   font-size: 1.8em;
 }
 
+lottie-player {
+  --lottie-player-seeker-track-color: #e4850900;
+  --lottie-player-seeker-thumb-color: #ffcc0000;
+}
+
 .projects {
-  width: 90%;
-  margin: 0 auto;
-  padding: 20px 0;
-  /*background: $gray;*/
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   display: grid;
-  grid-template-columns: auto auto;
+  gap: 40px;
+  grid-template-columns: auto auto auto;
 }
 
 .projects .project {
-  /*background: $white;*/
   margin-bottom: 50px;
   padding: 20px 20px;
   border-radius: 10px;
@@ -352,7 +353,31 @@
   }
 }
 
+.projects .projects {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 480px) {
+  .projects {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .project {
     padding: 10px;
   }
