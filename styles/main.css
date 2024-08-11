@@ -125,17 +125,17 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 100px 20px 40px;
-    /* Adjust padding for mid-sized screens */
+    padding: 80px 20px 30px;
+    /* Slightly reduce padding for mid-sized screens */
   }
 
   .header img {
-    max-width: 40%;
-    /* Adjust image size for better fit */
+    max-width: 50%;
+    /* Ensure image scales correctly */
   }
 
   .header h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
   }
 
   .header p {
@@ -143,19 +143,20 @@
   }
 }
 
+/* Media query for mobile devices */
 @media (max-width: 480px) {
   .header {
-    padding: 80px 10px 30px;
-    /* Adjusted padding for smaller screens */
+    padding: 60px 10px 20px;
+    /* Further reduce padding for smaller screens */
   }
 
   .header img {
-    max-width: 60%;
-    /* Further reduce image size for smaller screens */
+    max-width: 100%;
+    /* Ensure the image does not overflow the container */
   }
 
   .header h1 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .header p {
