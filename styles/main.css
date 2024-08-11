@@ -1,6 +1,6 @@
 /*nav bar section*/
 .navbar {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding: 20px 0;
   display: flex;
@@ -14,8 +14,7 @@
 }
 
 .navbar .logo {
-  max-width: 130px;
-  box-shadow: 3px 3px 5px black solid #000;
+  max-width: 120px;
 }
 
 .navbar .avatar {
