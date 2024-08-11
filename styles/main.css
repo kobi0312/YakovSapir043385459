@@ -69,6 +69,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    width: auto;
+  }
+
   .navbar .nav-links {
     position: absolute;
     right: 0;
@@ -83,6 +87,7 @@
     transition: transform 0.3s ease-in;
     gap: 10px;
   }
+
 
   .navbar .nav-links.nav-active {
     transform: translateX(0%);
