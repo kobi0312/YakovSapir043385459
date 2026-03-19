@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 case "clear":
                     clear();
                     break;
+                case "invert":
+                    invertSign();
+                    break;
+                case "percent":
+                    calculatePercent();
+                    break;
                 default:
                     break;
             }
@@ -44,10 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const handleOperator = (nextOperator) => {
-        if (operator && !shouldResetScreen) {
+        if (previousValue !== null && operator && !shouldResetScreen) {
             calculate();
+        } else {
+            previousValue = currentValue;
         }
-        previousValue = currentValue;
         operator = nextOperator;
         shouldResetScreen = true;
     };
@@ -70,21 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
             case "/":
                 currentValue = (prev / current).toString();
                 break;
-            case "%":
-                currentValue = (prev % current).toString();
-                break;
-            case "invert":
-                currentValue = (current * -1).toString();
-                break;
-            case "=":
-                calculate();
-                break;
             default:
                 break;
         }
 
         operator = null;
-        previousValue = null;
+        previousValue = currentValue;
         shouldResetScreen = true;
     };
 
@@ -93,5 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
         operator = null;
         previousValue = null;
         shouldResetScreen = false;
+    };
+
+    const invertSign = () => {
+        currentValue = (parseFloat(currentValue) * -1).toString();
+    };
+
+    const calculatePercent = () => {
+        currentValue = (parseFloat(currentValue) / 100).toString();
     };
 });

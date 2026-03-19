@@ -2,6 +2,7 @@ body {
     background: url('../Tetris/images/backgound.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Arial', sans-serif;
+    height: 100vh;
 }
 
 h1.floating-title {
